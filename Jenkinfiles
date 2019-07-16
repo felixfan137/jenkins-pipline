@@ -2,13 +2,20 @@ pipline {
 		agent any
 		stages {
 				stage (build) {
-				.....
+					steps {
+						echo 'hi, firs build'
+					}
 				}
-				stage (test) {
-				.....
+				stage (confirm) {
+					steps {
+						input('proses ngk bos ?')
+					}
 				}
-				stage (QA) {
-				.....
+				stage (QA ) {
+					when {
+					       not {
+						    branch "master"
+                       				}
 				}
 				stage (Deploy) {
 				.....
