@@ -29,8 +29,8 @@ pipeline {
                            }
                            }
                             stage('Integration test') {
-                              agent any {
-                                    docker {
+                              agent  {
+                                    any {
                                             image 'node:7-alpine'
                                               args '--name docker-node' // list any args
                                            }
