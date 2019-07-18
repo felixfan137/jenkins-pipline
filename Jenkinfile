@@ -31,8 +31,8 @@ pipeline {
                             stage('Integration test') {
                               agent {
                                     docker {
-                                            reuseNode true
-                                            image 'ubuntu'
+                                            image 'node:7-alpine'
+                                              args '--name docker-node' // list any args
                                            }
                                     }
                               steps {
